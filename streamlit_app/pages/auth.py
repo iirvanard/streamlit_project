@@ -2,7 +2,7 @@ import streamlit as st
 from st_pages import hide_pages
 from core.supabase import AuthClient
 from utils.authenticator import authenticators
-import base64
+from utils.image import get_image_as_base64
 
 hide_pages(["streamlit_app", "auth"])
 
@@ -10,17 +10,10 @@ auth = AuthClient()
 auth_ = authenticators()
 
 
-@st.cache_data
-def get_image_as_base64(file):
-    with open(file, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-
 def login():
     st.markdown(f"""
     <div style='text-align: center;'>
-        <img src="data:image/png;base64,{get_image_as_base64("assets/img/logo.png", )}" alt="Your image" />
+        <img src="data:image/png;base64,{get_image_as_base64("./static/logo.png", )}" alt="Your image" />
         <h1>welcome back</h1>
         <p>sign in to access your account</p>
     </div>
@@ -57,7 +50,7 @@ def login():
 def register():
     st.markdown(f"""
     <div style='text-align: center;'>
-        <img src="data:image/png;base64,{get_image_as_base64("assets/img/logo.png", )}" alt="Your image" />
+        <img src="data:image/png;base64,{get_image_as_base64("./static/logo.png", )}" alt="Your image" />
         <h1>Get Started</h1>
         <p>by creating a free account.</p>
     </div>

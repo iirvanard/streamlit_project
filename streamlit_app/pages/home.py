@@ -4,8 +4,6 @@ from utils.authenticator import authenticators
 import pandas as pd
 from utils.st_aggrid import AgGrid, GridOptionsBuilder, ColumnsAutoSizeMode
 
-from utils.modal import Modal
-
 st.set_page_config(layout="wide")
 hide_pages(["streamlit_app", "auth"])
 auth_ = authenticators()
@@ -13,18 +11,18 @@ auth_ = authenticators()
 if "logout" in st.query_params:
     st.success("Logout Sukses!")
 
-elif "add_data_status" in st.query_params.keys(
-):  # Fixing the conditional statement
-    if st.query_params["add_data_status"] == "success":
-        st.success("add data Sukses!")
-    else:
-        st.error("add data failed!")
-
 logged_in = st.session_state.get('logged_in', False)
 
 
 def main():
     st.header('This is a header with a divider', divider='gray')
+
+    if "add_data_status" in st.query_params.keys(
+    ):  # Fixing the conditional statement
+        if st.query_params["add_data_status"] == "success":
+            st.success("add data Sukses!")
+        else:
+            st.error("add data failed!")
 
     if 'submitted' not in st.session_state:
         st.session_state.submitted = False
