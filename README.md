@@ -20,7 +20,7 @@ npm run servewindows
 ```
 
 - build executed files
-- 
+  
 ```
 npm run dist
 ```
