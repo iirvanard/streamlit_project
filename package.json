@@ -27,6 +27,7 @@
     },
     "stlite": {
         "desktop": {
+        
             "dependencies": [
                 "st-pages",
                 "toml",
@@ -35,7 +36,11 @@
                 "pandas",
                 "numpy",
                 "python-decouple"
-            ]
+            ],
+            "files": ["streamlit_app/streamlit_app.py", "streamlit_app/pages/*.py", "streamlit_app/core/*.py", "streamlit_app/static", "streamlit_app/utils", "streamlit_app/.streamlit"],
+            
+            "entrypoint": "streamlit_app/streamlit_app.py"
+
         }
     }
 }

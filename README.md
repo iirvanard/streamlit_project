@@ -25,3 +25,9 @@ npm run servewindows
 npm run dist
 ```
 after build the application, you can access executed files inside /dist/ directory
+
+
+- run server 
+```
+streamlit run streamlit_app/streamlit_app.py
+```

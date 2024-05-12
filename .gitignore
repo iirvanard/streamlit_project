@@ -156,7 +156,8 @@ cython_debug/
 #build 
 build/
 /build/
-
+/dist/
+dist/
 
 #nodejs
 node_modules/

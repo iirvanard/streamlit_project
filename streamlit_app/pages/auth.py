@@ -13,15 +13,15 @@ auth_ = authenticators()
 def login():
     st.markdown(f"""
     <div style='text-align: center;'>
-        <img src="data:image/png;base64,{get_image_as_base64("./static/logo.png", )}" alt="Your image" />
+        <img src="data:image/png;base64,{get_image_as_base64("./streamlit_app/static/logo.png", )}" alt="Your image" />
         <h1>welcome back</h1>
         <p>sign in to access your account</p>
     </div>
     """,
                 unsafe_allow_html=True)
 
-    email = st.text_input("Email", value="imnot404@gmail.com")
-    password = st.text_input("Password", type="password", value="Irvaners123@")
+    email = st.text_input("Email")
+    password = st.text_input("Password", type="password")
 
     test = st.checkbox('remember me!')
 
@@ -50,7 +50,7 @@ def login():
 def register():
     st.markdown(f"""
     <div style='text-align: center;'>
-        <img src="data:image/png;base64,{get_image_as_base64("./static/logo.png", )}" alt="Your image" />
+        <img src="data:image/png;base64,{get_image_as_base64("./streamlit_app/static/logo.png", )}" alt="Your image" />
         <h1>Get Started</h1>
         <p>by creating a free account.</p>
     </div>
