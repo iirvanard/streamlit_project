@@ -2,12 +2,14 @@
 # how to ..
 
 - node installation *
+  
 inside project file use this command :
 ```
 npm install 
 ```
 
-- build dump 
+- build dump
+  
 for build dump file you can use this command : 
  ```
 npm run dump streamlit_app
@@ -17,7 +19,8 @@ after making dump file you can run the apps using command :
 npm run servewindows  
 ```
 
-- build executed files 
+- build executed files
+- 
 ```
 npm run dist
 ```
