@@ -9,7 +9,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
-!streamlit_app\utils\st_aggrid\frontend\build
 develop-eggs/
 dist/
 downloads/
@@ -163,3 +162,6 @@ dist/
 #nodejs
 node_modules/
 /node_modules/
+
+# Exclude specific build directory for tracking
+!streamlit_app/utils/st_aggrid/frontend/build/
