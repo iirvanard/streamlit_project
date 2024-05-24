@@ -1,5 +1,5 @@
 {
-    "name": "nafan_test",
+    "name": "smartpars",
     "version": "0.1.0",
     "main": "./build/electron/main.js",
     "scripts": {
@@ -9,7 +9,6 @@
         "pack": "electron-builder --dir",
         "dist": "electron-builder",
         "postinstall": "electron-builder install-app-deps"
-
     },
     "build": {
         "files": [
@@ -23,22 +22,25 @@
         "@stlite/desktop": "^0.54.2",
         "cross-env": "^7.0.3",
         "electron": "^30.0.1",
-        "electron-builder": "^24.13.3"
+        "electron-builder": "^24.13.3",
+        "@stlite/mountable": "^0.54.2"
     },
     "stlite": {
         "desktop": {
-        
+            "idbfsMountpoints": ["/mnt"],
+            "embed": true,
             "dependencies": [
-                "st-pages",
                 "toml",
                 "requests",
                 "matplotlib",
-                "pandas",
                 "numpy",
-                "python-decouple"
+                "python-decouple",
+                "st-click-detector",
+                "streamlit_url_fragment",
+                "postgrest","ssl","storage3","gotrue","supafunc","websockets","httpx"
             ],
-            "files": ["streamlit_app/streamlit_app.py", "streamlit_app/pages/*.py", "streamlit_app/core/*.py", "streamlit_app/static", "streamlit_app/utils", "streamlit_app/.streamlit"],
-            
+        
+            "files": ["streamlit_app/*",".streamlit/*"],
             "entrypoint": "streamlit_app/streamlit_app.py"
 
         }

@@ -1,17 +1,11 @@
 import streamlit as st
-from st_pages import hide_pages
-from utils.authenticator import authenticators
 import pandas as pd
 from utils.st_aggrid import AgGrid, GridOptionsBuilder, ColumnsAutoSizeMode
+from core.supabase.supabase_auth import SupabaseAuth
 
-st.set_page_config(layout="wide")
-hide_pages(["streamlit_app", "auth"])
-auth_ = authenticators()
+st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 
-if "logout" in st.query_params:
-    st.success("Logout Sukses!")
-
-logged_in = st.session_state.get('logged_in', False)
+auth = SupabaseAuth()
 
 
 def main():
@@ -37,9 +31,9 @@ def main():
             st.rerun()
     sidebarButton()
     if st.sidebar.button("Logout"):
-        st.query_params.logout = True
-        auth_.logout()
-        st.rerun()
+        auth.logout()
+        st.session_state.logout = True
+        st.switch_page('pages/login.py')
     data = {
         'Name': [
             'Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Miami', 'Miami',
@@ -104,22 +98,21 @@ def main():
 def sidebarButton():
     with st.sidebar:
         if (not st.session_state.submitted):
-            open = st.button("add", key="add_open")
+            open = st.button("add", key="add_open", use_container_width=True)
             if open:
                 st.session_state.submitted = True
                 st.rerun()
         else:
-            close = st.button("close", key="add_close", type='primary')
+            close = st.button("close",
+                              key="add_close",
+                              type='primary',
+                              use_container_width=True)
             if close:
                 st.session_state.submitted = False
                 st.rerun()
 
 
-if logged_in:
-
+if auth.get_user():  #ubah nanti
     main()
-
 else:
-    st.warning("You can access this page by signin! ")
-    if st.button("Login", type="primary"):
-        st.switch_page("pages/auth.py")
+    st.switch_page('pages/login.py')
