@@ -48,61 +48,29 @@ st.html(body="""
             .st-emotion-cache-1mjbses {
                 flex-direction:column-reverse;
             }
-<<<<<<< HEAD
             .st-emotion-cache-1mjbses {
                     flex-direction:column-reverse;
                 }
-=======
-       
-          
-            .st-emotion-cache-1mjbses {
-                    flex-direction:column-reverse;
-                }
-            
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
             div[data-testid='stHorizontalBlock']{
                 gap:0;
             }          
             div[data-testid='stVerticalBlock']:nth-of-type(1){
                 gap:0;
             }   
-<<<<<<< HEAD
-=======
-            
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
             div[data-testid='column']:nth-of-type(2){
                 margin-left: 1rem;
                 margin-right: 1rem;
             }
-<<<<<<< HEAD
-=======
-
-            
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
             div[data-testid='column']:nth-of-type(1) img {
                 border-top-right-radius: 20px;
                 border-bottom-right-radius: 20px;
             }        
-<<<<<<< HEAD
-=======
-
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
             div[data-testid='stCheckbox'] {
                 margin-top: 20px;
                 margin-bottom: 20px;
             }
-<<<<<<< HEAD
         </style>
     """, )
-=======
-    
-
-        </style>
-    """, )
-#  header[data-testid='stHeader'] {
-#             display: none;
-#         }
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
 
 
 def login():
@@ -115,13 +83,8 @@ def login():
     """,
                 unsafe_allow_html=True)
 
-<<<<<<< HEAD
     email = st.text_input("Email")
     password = st.text_input("Password", type="password")
-=======
-    email = st.text_input("Email", value="t@t.com")
-    password = st.text_input("Password", type="password", value="123123")
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
     st.markdown("""
     <style>
     div[data-testid="stCheckbox"] {
@@ -132,7 +95,6 @@ def login():
     """,
                 unsafe_allow_html=True)
 
-<<<<<<< HEAD
     if st.checkbox('remember me!'):
         st.write("test get user")
         st.text(auth.get_user())
@@ -140,21 +102,11 @@ def login():
     content = '''<div style="text-align:center;margin-bottom:5%;"><span>New Member? <a href='#' id="register" target="_self">Register now</a></span></div>'''
     clicked = click_detector(content)
     if clicked:
-=======
-    if (st.checkbox('remember me!')):
-        st.write("test get user")
-        st.text(auth.get_user())
-    button = st.button("Login", type="primary", use_container_width=True)
-    content = '''<div style="text-align:center;margin-bottom:5%;"><span>New Member? <a  href='#' id="register" target="_self">Register now</a></span></div>'''
-    clicked = click_detector(content)
-    if (clicked):
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
         st.switch_page('pages/register.py')
 
     if button:
         try:
             if email != "" and password != "":
-<<<<<<< HEAD
                 with st.spinner("loading..."):
 
                     auth.login_request(email, password)
@@ -166,26 +118,10 @@ def login():
                         st.toast("Redirecting in {} seconds...".format(
                             seconds_to_wait))
 
-=======
-                with st.spinner("Logging in..."):
-                    auth.login_request(email, password)
-                    # st.toast(
-                    #     "Login successful. Redirecting to the next page in 3 seconds.",
-                    #     icon=":material/check_circle:")
-                    st.toast(
-                        "Login successful. Redirecting to the next page in 3 seconds.",
-                    )
-                    time.sleep(3)
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
                     st.switch_page('pages/home.py')
             else:
                 raise ValueError("Please enter both email and password.")
         except Exception as e:
-<<<<<<< HEAD
-=======
-
-            # st.toast(str(e), icon=":material/error:")
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
             st.toast(str(e))
 
 
@@ -195,18 +131,9 @@ if auth.get_user():
 else:
     left, right = st.columns([3, 1.5])
     with left:
-<<<<<<< HEAD
         st.markdown(
             f"""<img src="data:image/png;base64,{get_image_as_base64("./streamlit_app/static/background.png", )}" style="width:100%;height:100%;object-fit:cover;" />""",
             unsafe_allow_html=True)
-=======
-        # st.image("./streamlit_app/static/background.png")
-        st.markdown(f"""
-        <img src="data:image/png;base64,{get_image_as_base64("./streamlit_app/static/background.png", )}" style="width:100%;height:100%;object-fit:cover;" />
-
-    """,
-                    unsafe_allow_html=True)
->>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
 
     with right:
         login()
