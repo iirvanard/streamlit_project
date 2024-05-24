@@ -1,0 +1,48 @@
+{
+  "name": "nafan_test",
+  "version": "0.1.0",
+  "main": "./build/electron/main.js",
+  "scripts": {
+    "dump": "dump-stlite-desktop-artifacts",
+    "serve": "cross-env NODE_ENV=production electron .",
+    "servewindows": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "files": [
+      "build/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "devDependencies": {
+    "@stlite/desktop": "^0.54.2",
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.1",
+    "electron-builder": "^24.13.3"
+  },
+  "stlite": {
+    "desktop": {
+      "embed": true,
+      "dependencies": [
+        "st-pages",
+        "toml",
+        "requests",
+        "matplotlib",
+        "pandas",
+        "numpy",
+        "python-decouple",
+        "st_click_detector",
+        "streamlit-url-fragment"
+      ],
+      "files": [
+        "streamlit_app/",
+        ".streamlit"
+      ],
+      "entrypoint": "streamlit_app/streamlit_app.py"
+    }
+  }
+}
