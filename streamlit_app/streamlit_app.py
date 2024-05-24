@@ -15,9 +15,7 @@ with middle:
 """,
                 unsafe_allow_html=True)
 
-    # Membuat dua kolom dengan proporsi yang lebih seimbang
-    col1, col2 = st.columns([4,
-                             1])  # Menambah proporsi kolom pertama dan kedua
+    col1, col2 = st.columns([4, 1])
     with col1:
         if st.button(label="sign in", type="primary"):
             st.switch_page("pages/login.py")
