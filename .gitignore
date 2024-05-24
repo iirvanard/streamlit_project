@@ -9,6 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+!streamlit_app\utils\st_aggrid\frontend\build
 develop-eggs/
 dist/
 downloads/
@@ -155,7 +156,6 @@ cython_debug/
 
 #build 
 build/
-!streamlit_app\utils\st_aggrid\frontend\build
 /build/
 /dist/
 dist/

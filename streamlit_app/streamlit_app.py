@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.image import get_image_as_base64
-
+# tests
 st.set_page_config(layout="wide")
 
 left_space, middle, right_space = st.columns([1, 2, 1])
