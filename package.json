@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "nafan_test",
   "version": "0.1.0",
   "main": "./build/electron/main.js",
@@ -45,4 +46,52 @@
       "entrypoint": "streamlit_app/streamlit_app.py"
     }
   }
+=======
+    "name": "smartpars",
+    "version": "0.1.0",
+    "main": "./build/electron/main.js",
+    "scripts": {
+        "dump": "dump-stlite-desktop-artifacts",
+        "serve": "cross-env NODE_ENV=production electron .",
+        "servewindows": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "build": {
+        "files": [
+            "build/**/*"
+        ],
+        "directories": {
+            "buildResources": "assets"
+        }
+    },
+    "devDependencies": {
+        "@stlite/desktop": "^0.54.2",
+        "cross-env": "^7.0.3",
+        "electron": "^30.0.1",
+        "electron-builder": "^24.13.3",
+        "@stlite/mountable": "^0.54.2"
+    },
+    "stlite": {
+        "desktop": {
+            "idbfsMountpoints": ["/mnt"],
+            "embed": true,
+            "dependencies": [
+                "toml",
+                "requests",
+                "matplotlib",
+                "numpy",
+                "python-decouple",
+                "st-click-detector",
+                "streamlit_url_fragment",
+                "postgrest","ssl","storage3","gotrue","supafunc","websockets","httpx"
+            ],
+        
+            "files": ["streamlit_app/*",".streamlit/*"],
+            "entrypoint": "streamlit_app/streamlit_app.py"
+
+        }
+    }
+>>>>>>> 2450d732be8294214493ca8f73e2309f823bb56d
 }
