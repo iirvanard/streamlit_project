@@ -10,11 +10,11 @@ npm install
 
 - build dump
   
-for build dump file you can use this command : 
+for build dump files you can use this command : 
  ```
 npm run dump streamlit_app
 ```
-after making dump file you can run the apps using command :
+after making dump files you can run the apps using command :
 ```
 npm run servewindows  
 ```
