@@ -3,7 +3,7 @@
 
 - node installation *
   
-inside project file use this command :
+inside project folder, use this command :
 ```
 npm install 
 ```
